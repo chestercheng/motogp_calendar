@@ -71,7 +71,7 @@ def resolve_event(evt_html):
 
         desc.append(f'{ini_time} {category} {sessions}')
 
-    td = datetime.strptime(end, TIME_FMT) - datetime.strptime(end, TIME_FMT)
+    td = datetime.strptime(end, TIME_FMT) - datetime.strptime(begin, TIME_FMT)
     evt.begin = begin
     evt.description = '\n'.join(desc)
     evt.duration = timedelta(seconds=td.seconds + 7200)
